@@ -19,13 +19,17 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              { "glob": "favicon.ico", "input": "/src", "output": "/" },
+              { "glob": "**/*", "input": "./node_modules/mxgraph/javascript/src", "output": "/assets/mxgraph" }
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/mxgraph.conf.js",
+              "node_modules/mxgraph/javascript/mxClient.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -74,10 +78,14 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/mxgraph.conf.js",
+              "node_modules/mxgraph/javascript/mxClient.js"
+            ],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              { "glob": "favicon.ico", "input": "/src", "output": "/" },
+              { "glob": "**/*", "input": "./node_modules/mxgraph/javascript/src", "output": "/assets/mxgraph" }
             ]
           }
         },
